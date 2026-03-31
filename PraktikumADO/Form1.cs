@@ -15,4 +15,8 @@ namespace PraktikumADO
     {
         SqlConnection conn;
         SqlCommand cmd;
+        public Form1()
+        {
+            InitializeComponent();
+        }
         
