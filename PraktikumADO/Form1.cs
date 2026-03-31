@@ -25,4 +25,28 @@ namespace PraktikumADO
                 "Data Source=LAPTOP-P0RT1FO1;Initial Catalog=DBAkademikADO;Integrated Security=True"
             );
         }
+        private void btnHitungMK_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Koneksi();
+                conn.Open();
+
+                string query = "SELECT COUNT(*) FROM MataKuliah";
+
+                cmd = new SqlCommand(query, conn);
+
+                int jumlah = (int)cmd.ExecuteScalar();
+
+                txtHasil.Text = jumlah.ToString();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+        }
+
         
